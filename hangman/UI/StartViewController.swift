@@ -36,6 +36,8 @@ class StartViewController: UIViewController {
 			.store(in: &bag)
 	}
 
+	@IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) { }
+
 	@IBAction func connect(_ sender: UIBarButtonItem) {
 		MatchController.shared.connect()
 	}

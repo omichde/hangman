@@ -13,20 +13,26 @@ class MatchViewController: UIViewController {
 
 	@IBOutlet weak var wordView: UILabel!
 	@IBOutlet weak var guessView: UILabel!
-	@IBOutlet weak var countView: UILabel!
+	@IBOutlet weak var hangmanView: HangmanView!
 
 	private var bag = Set<AnyCancellable>()
+	private let match = MatchController.shared
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		MatchController.shared.$game.sink { [weak self] game in
+		match.$game.sink { [weak self] game in
 			guard let self = self, let game = game else { return }
 
 			self.viewUpdate(game: game)
+			switch game.state {
+			case .success: self.performSegue(withIdentifier: "showSuccess", sender: nil)
+			case .failure: self.performSegue(withIdentifier: "showError", sender: nil)
+			default: ()
+			}
 		}.store(in: &bag)
 
-		if let game = MatchController.shared.game {
+		if let game = match.game {
 			viewUpdate(game: game)
 		}
 	}
@@ -34,11 +40,6 @@ class MatchViewController: UIViewController {
 	func viewUpdate(game: Game) {
 		wordView.text = game.displayWord
 		guessView.text = game.displayGuesses
-		countView.text = "\(game.falseCounter) - \(game.stepCounter)"
-	}
-
-	@IBAction func dismiss(_ sender: UIBarButtonItem) {
-		navigationController?.popViewController(animated: true)
-		// open what happens to game
+		hangmanView.steps = game.falseCounter
 	}
 }

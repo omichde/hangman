@@ -19,6 +19,10 @@
 		DE93BEEC2674DAED00C160F5 /* MatchActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEEB2674DAED00C160F5 /* MatchActivity.swift */; };
 		DE93BEEE2674DB4D00C160F5 /* MatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEED2674DB4D00C160F5 /* MatchController.swift */; };
 		DE9C359B26761998002466AE /* hangmanGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C359A26761998002466AE /* hangmanGameTests.swift */; };
+		DE9C35A3267652D8002466AE /* HangmanKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A2267652D8002466AE /* HangmanKit.swift */; };
+		DE9C35A526765391002466AE /* HangmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A426765391002466AE /* HangmanView.swift */; };
+		DE9C35A726765931002466AE /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A626765931002466AE /* SuccessViewController.swift */; };
+		DE9C35A926765AAB002466AE /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A826765AAB002466AE /* ErrorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		DE93BEEF2675074400C160F5 /* hangman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hangman.entitlements; sourceTree = "<group>"; };
 		DE9C359826761998002466AE /* hangmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hangmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9C359A26761998002466AE /* hangmanGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hangmanGameTests.swift; sourceTree = "<group>"; };
+		DE9C35A2267652D8002466AE /* HangmanKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmanKit.swift; sourceTree = "<group>"; };
+		DE9C35A426765391002466AE /* HangmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanView.swift; sourceTree = "<group>"; };
+		DE9C35A626765931002466AE /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		DE9C35A826765AAB002466AE /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +102,7 @@
 				DE93BED02674CB4B00C160F5 /* AppDelegate.swift */,
 				DE93BED22674CB4B00C160F5 /* SceneDelegate.swift */,
 				DE93BEED2674DB4D00C160F5 /* MatchController.swift */,
-				DE93BED42674CB4B00C160F5 /* StartViewController.swift */,
-				DE93BEE42674D7BD00C160F5 /* MatchViewController.swift */,
-				DE93BEE62674D7D800C160F5 /* GuessViewController.swift */,
-				DE93BED62674CB4B00C160F5 /* Main.storyboard */,
+				DE9C35A1267652B4002466AE /* UI */,
 				DE93BED92674CB4D00C160F5 /* Assets.xcassets */,
 				DE93BEDB2674CB4D00C160F5 /* LaunchScreen.storyboard */,
 				DE93BEDE2674CB4D00C160F5 /* Info.plist */,
@@ -120,6 +125,21 @@
 				DE9C359A26761998002466AE /* hangmanGameTests.swift */,
 			);
 			path = hangmanTests;
+			sourceTree = "<group>";
+		};
+		DE9C35A1267652B4002466AE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DE93BED62674CB4B00C160F5 /* Main.storyboard */,
+				DE93BED42674CB4B00C160F5 /* StartViewController.swift */,
+				DE93BEE42674D7BD00C160F5 /* MatchViewController.swift */,
+				DE93BEE62674D7D800C160F5 /* GuessViewController.swift */,
+				DE9C35A626765931002466AE /* SuccessViewController.swift */,
+				DE9C35A826765AAB002466AE /* ErrorViewController.swift */,
+				DE9C35A426765391002466AE /* HangmanView.swift */,
+				DE9C35A2267652D8002466AE /* HangmanKit.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE93BEEC2674DAED00C160F5 /* MatchActivity.swift in Sources */,
+				DE9C35A926765AAB002466AE /* ErrorViewController.swift in Sources */,
+				DE9C35A526765391002466AE /* HangmanView.swift in Sources */,
+				DE9C35A3267652D8002466AE /* HangmanKit.swift in Sources */,
+				DE9C35A726765931002466AE /* SuccessViewController.swift in Sources */,
 				DE93BEEE2674DB4D00C160F5 /* MatchController.swift in Sources */,
 				DE93BEE52674D7BD00C160F5 /* MatchViewController.swift in Sources */,
 				DE93BEEA2674D88D00C160F5 /* Game.swift in Sources */,

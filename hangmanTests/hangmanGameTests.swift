@@ -34,7 +34,7 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "")
 		XCTAssertEqual(g2.stepCounter, 0)
 		XCTAssertEqual(g2.falseCounter, 0)
-		XCTAssertFalse(g2.isSolved)
+		XCTAssertEqual(g2.state, .playing)
 	}
 	
 	func testGuessA() {
@@ -45,14 +45,14 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "")
 		XCTAssertEqual(g2.stepCounter, 1)
 		XCTAssertEqual(g2.falseCounter, 0)
-		XCTAssertFalse(g2.isSolved)
+		XCTAssertEqual(g2.state, .playing)
 
 		let g3 = g2.guess("A")
 		XCTAssertEqual(g3.displayWord, "A _ _   _ _ _   A A A")
 		XCTAssertEqual(g3.displayGuesses, "")
 		XCTAssertEqual(g3.stepCounter, 1)
 		XCTAssertEqual(g3.falseCounter, 0)
-		XCTAssertFalse(g3.isSolved)
+		XCTAssertEqual(g3.state, .playing)
 	}
 
 	func testGuessX() {
@@ -63,14 +63,14 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "X")
 		XCTAssertEqual(g2.stepCounter, 1)
 		XCTAssertEqual(g2.falseCounter, 1)
-		XCTAssertFalse(g2.isSolved)
+		XCTAssertEqual(g2.state, .playing)
 
 		let g3 = g2.guess("X")
 		XCTAssertEqual(g3.displayWord, "_ _ _   _ _ _   _ _ _")
 		XCTAssertEqual(g3.displayGuesses, "X")
 		XCTAssertEqual(g3.stepCounter, 1)
-		XCTAssertEqual(g2.falseCounter, 1)
-		XCTAssertFalse(g3.isSolved)
+		XCTAssertEqual(g3.falseCounter, 1)
+		XCTAssertEqual(g3.state, .playing)
 	}
 
 	func testGuessAX() {
@@ -81,7 +81,7 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "X")
 		XCTAssertEqual(g2.stepCounter, 2)
 		XCTAssertEqual(g2.falseCounter, 1)
-		XCTAssertFalse(g2.isSolved)
+		XCTAssertEqual(g2.state, .playing)
 	}
 
 	func testGuessAthenBthenC() {
@@ -92,7 +92,7 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "")
 		XCTAssertEqual(g2.stepCounter, 3)
 		XCTAssertEqual(g2.falseCounter, 0)
-		XCTAssertFalse(g2.isSolved)
+		XCTAssertEqual(g2.state, .playing)
 	}
 		
 	func testGuessABC() {
@@ -103,7 +103,22 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "")
 		XCTAssertEqual(g2.stepCounter, 1)
 		XCTAssertEqual(g2.falseCounter, 1)
-		XCTAssertFalse(g2.isSolved)
+		XCTAssertEqual(g2.state, .playing)
+	}
+
+	func testGuessNone() {
+		let word = "abc"
+		let g1 = Game(word)
+
+		var g2 = g1
+		for chr in "defghijklmnopqrstuvwxyz" {
+			g2 = g2.guess(String(chr))
+		}
+		XCTAssertEqual(g2.displayWord, "_ _ _")
+		XCTAssertEqual(g2.displayGuesses, "d e f g h i j k l m n o p q r s t u v w x y z".uppercased())
+		XCTAssertEqual(g2.stepCounter, 23)
+		XCTAssertEqual(g2.falseCounter, 23)
+		XCTAssertEqual(g2.state, .failure)
 	}
 
 	func testGuessAll() {
@@ -115,7 +130,7 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "")
 		XCTAssertEqual(g2.stepCounter, 0)
 		XCTAssertEqual(g2.falseCounter, 0)
-		XCTAssertTrue(g2.isSolved)
+		XCTAssertEqual(g2.state, .success)
 	}
 
 	func testGuessAllReversed() {
@@ -127,7 +142,7 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "")
 		XCTAssertEqual(g2.stepCounter, 1)
 		XCTAssertEqual(g2.falseCounter, 1)
-		XCTAssertFalse(g2.isSolved)
+		XCTAssertEqual(g2.state, .playing)
 	}
 
 	func testGuessAthenAll() {
@@ -139,7 +154,7 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "")
 		XCTAssertEqual(g2.stepCounter, 1)
 		XCTAssertEqual(g2.falseCounter, 0)
-		XCTAssertTrue(g2.isSolved)
+		XCTAssertEqual(g2.state, .success)
 	}
 
 	func testGuessAthenXthenAll() {
@@ -151,6 +166,6 @@ class hangmanGameTests: XCTestCase {
 		XCTAssertEqual(g2.displayGuesses, "X")
 		XCTAssertEqual(g2.stepCounter, 2)
 		XCTAssertEqual(g2.falseCounter, 1)
-		XCTAssertTrue(g2.isSolved)
+		XCTAssertEqual(g2.state, .success)
 	}
 }

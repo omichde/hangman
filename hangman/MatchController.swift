@@ -89,7 +89,6 @@ class MatchController {
 	func next(_ game: Game) {
 		async {
 			do {
-				print("next game: \(game.word) at \(game.created)")
 				DispatchQueue.main.async { [weak self] in	// meh
 					self?.game = game
 				}

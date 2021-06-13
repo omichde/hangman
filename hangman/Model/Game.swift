@@ -9,6 +9,11 @@ import Foundation
 
 
 struct Game: Codable {
+
+	enum State {
+		case playing, success, failure
+	}
+
 	let created: Date
 	let word: String
 	let guesses: [String]
@@ -87,11 +92,17 @@ extension Game {
 	var displayGuesses: String {
 		let wordChars = Array(word).map { String($0) }
 		let trimmedGuess = guesses.filter { !wordChars.contains($0) }
-		return trimmedGuess.joined(separator: ", ")
+		return trimmedGuess.joined(separator: " ")
 	}
 	
-	var isSolved: Bool {
+	var state: State {
+		if falseCounter >= 13 {
+			return .failure
+		}
 		let wordChars = Array(word).map { String($0) }
-		return nil == wordChars.firstIndex { !guesses.contains($0) }
+		if nil == wordChars.firstIndex(where: { !guesses.contains($0) }) {
+			return .success
+		}
+		return .playing
 	}
 }
