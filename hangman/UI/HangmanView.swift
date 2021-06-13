@@ -12,6 +12,6 @@ class HangmanView: UIView {
 	var steps: Int = 0 { didSet { setNeedsDisplay() } }
 
 	override func draw(_ rect: CGRect) {
-		HangmanKit.drawHangman(frame: rect, resizing: .aspectFill, strokeColor: .brown, progress: Double(steps))
+		HangmanKit.drawHangman(frame: rect, resizing: .aspectFill, strokeColor: .orange, progress: Double(steps))
 	}
 }
