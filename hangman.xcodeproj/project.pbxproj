@@ -13,9 +13,23 @@
 		DE93BED82674CB4B00C160F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE93BED62674CB4B00C160F5 /* Main.storyboard */; };
 		DE93BEDA2674CB4D00C160F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE93BED92674CB4D00C160F5 /* Assets.xcassets */; };
 		DE93BEDD2674CB4D00C160F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE93BEDB2674CB4D00C160F5 /* LaunchScreen.storyboard */; };
-		DE93BEE52674D7BD00C160F5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEE42674D7BD00C160F5 /* GameViewController.swift */; };
+		DE93BEE52674D7BD00C160F5 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEE42674D7BD00C160F5 /* MatchViewController.swift */; };
 		DE93BEE72674D7D800C160F5 /* GuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEE62674D7D800C160F5 /* GuessViewController.swift */; };
+		DE93BEEA2674D88D00C160F5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEE92674D88D00C160F5 /* Game.swift */; };
+		DE93BEEC2674DAED00C160F5 /* MatchActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEEB2674DAED00C160F5 /* MatchActivity.swift */; };
+		DE93BEEE2674DB4D00C160F5 /* MatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BEED2674DB4D00C160F5 /* MatchController.swift */; };
+		DE9C359B26761998002466AE /* hangmanGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C359A26761998002466AE /* hangmanGameTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE9C359C26761998002466AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE93BEC52674CB4B00C160F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE93BECC2674CB4B00C160F5;
+			remoteInfo = hangman;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DE93BECD2674CB4B00C160F5 /* hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,12 +40,25 @@
 		DE93BED92674CB4D00C160F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE93BEDC2674CB4D00C160F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE93BEDE2674CB4D00C160F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE93BEE42674D7BD00C160F5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DE93BEE42674D7BD00C160F5 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		DE93BEE62674D7D800C160F5 /* GuessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessViewController.swift; sourceTree = "<group>"; };
+		DE93BEE92674D88D00C160F5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		DE93BEEB2674DAED00C160F5 /* MatchActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchActivity.swift; sourceTree = "<group>"; };
+		DE93BEED2674DB4D00C160F5 /* MatchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchController.swift; sourceTree = "<group>"; };
+		DE93BEEF2675074400C160F5 /* hangman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hangman.entitlements; sourceTree = "<group>"; };
+		DE9C359826761998002466AE /* hangmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hangmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9C359A26761998002466AE /* hangmanGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hangmanGameTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DE93BECA2674CB4B00C160F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE9C359526761998002466AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				DE93BECF2674CB4B00C160F5 /* hangman */,
+				DE9C359926761998002466AE /* hangmanTests */,
 				DE93BECE2674CB4B00C160F5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				DE93BECD2674CB4B00C160F5 /* hangman.app */,
+				DE9C359826761998002466AE /* hangmanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,10 +89,13 @@
 		DE93BECF2674CB4B00C160F5 /* hangman */ = {
 			isa = PBXGroup;
 			children = (
+				DE93BEEF2675074400C160F5 /* hangman.entitlements */,
+				DE93BEE82674D86D00C160F5 /* Model */,
 				DE93BED02674CB4B00C160F5 /* AppDelegate.swift */,
 				DE93BED22674CB4B00C160F5 /* SceneDelegate.swift */,
+				DE93BEED2674DB4D00C160F5 /* MatchController.swift */,
 				DE93BED42674CB4B00C160F5 /* StartViewController.swift */,
-				DE93BEE42674D7BD00C160F5 /* GameViewController.swift */,
+				DE93BEE42674D7BD00C160F5 /* MatchViewController.swift */,
 				DE93BEE62674D7D800C160F5 /* GuessViewController.swift */,
 				DE93BED62674CB4B00C160F5 /* Main.storyboard */,
 				DE93BED92674CB4D00C160F5 /* Assets.xcassets */,
@@ -71,6 +103,23 @@
 				DE93BEDE2674CB4D00C160F5 /* Info.plist */,
 			);
 			path = hangman;
+			sourceTree = "<group>";
+		};
+		DE93BEE82674D86D00C160F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE93BEE92674D88D00C160F5 /* Game.swift */,
+				DE93BEEB2674DAED00C160F5 /* MatchActivity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE9C359926761998002466AE /* hangmanTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE9C359A26761998002466AE /* hangmanGameTests.swift */,
+			);
+			path = hangmanTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +142,24 @@
 			productReference = DE93BECD2674CB4B00C160F5 /* hangman.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DE9C359726761998002466AE /* hangmanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE9C35A026761998002466AE /* Build configuration list for PBXNativeTarget "hangmanTests" */;
+			buildPhases = (
+				DE9C359426761998002466AE /* Sources */,
+				DE9C359526761998002466AE /* Frameworks */,
+				DE9C359626761998002466AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE9C359D26761998002466AE /* PBXTargetDependency */,
+			);
+			name = hangmanTests;
+			productName = hangmanTests;
+			productReference = DE9C359826761998002466AE /* hangmanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -105,6 +172,10 @@
 				TargetAttributes = {
 					DE93BECC2674CB4B00C160F5 = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					DE9C359726761998002466AE = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = DE93BECC2674CB4B00C160F5;
 					};
 				};
 			};
@@ -122,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				DE93BECC2674CB4B00C160F5 /* hangman */,
+				DE9C359726761998002466AE /* hangmanTests */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +209,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE9C359626761998002466AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -144,7 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE93BEE52674D7BD00C160F5 /* GameViewController.swift in Sources */,
+				DE93BEEC2674DAED00C160F5 /* MatchActivity.swift in Sources */,
+				DE93BEEE2674DB4D00C160F5 /* MatchController.swift in Sources */,
+				DE93BEE52674D7BD00C160F5 /* MatchViewController.swift in Sources */,
+				DE93BEEA2674D88D00C160F5 /* Game.swift in Sources */,
 				DE93BEE72674D7D800C160F5 /* GuessViewController.swift in Sources */,
 				DE93BED52674CB4B00C160F5 /* StartViewController.swift in Sources */,
 				DE93BED12674CB4B00C160F5 /* AppDelegate.swift in Sources */,
@@ -152,7 +234,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE9C359426761998002466AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9C359B26761998002466AE /* hangmanGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE9C359D26761998002466AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE93BECC2674CB4B00C160F5 /* hangman */;
+			targetProxy = DE9C359C26761998002466AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE93BED62674CB4B00C160F5 /* Main.storyboard */ = {
@@ -295,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hangman/hangman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
@@ -323,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hangman/hangman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
@@ -346,6 +446,52 @@
 			};
 			name = Release;
 		};
+		DE9C359E26761998002466AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZU459JA6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.hangmanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hangman.app/hangman";
+			};
+			name = Debug;
+		};
+		DE9C359F26761998002466AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6ZU459JA6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.hangmanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hangman.app/hangman";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -363,6 +509,15 @@
 			buildConfigurations = (
 				DE93BEE22674CB4D00C160F5 /* Debug */,
 				DE93BEE32674CB4D00C160F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE9C35A026761998002466AE /* Build configuration list for PBXNativeTarget "hangmanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE9C359E26761998002466AE /* Debug */,
+				DE9C359F26761998002466AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
