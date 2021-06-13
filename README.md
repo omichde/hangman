@@ -28,6 +28,19 @@ This is an experiment on top of the current iOS 15 beta - as this project is a t
 - proper session teardown and recovery
 - better state management
 
+# Links
+
+- https://developer.apple.com/design/human-interface-guidelines/shareplay/overview/
+- https://developer.apple.com/shareplay/
+
+- https://developer.apple.com/videos/play/wwdc2021/10225/
+- https://developer.apple.com/videos/play/wwdc2021/10187/
+- https://developer.apple.com/videos/play/wwdc2021/10184/
+- https://developer.apple.com/videos/play/wwdc2021/10183/
+
+- https://developer.apple.com/documentation/groupactivities
+- https://developer.apple.com/documentation/avfoundation/media_playback_and_selection/supporting_coordinated_media_playback
+
 # Contact
 
 Oliver Michalak - [oliver@werk01.de](mailto:oliver@werk01.de) - [@omichde](http://twitter.com/omichde)
