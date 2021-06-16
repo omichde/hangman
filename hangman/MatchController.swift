@@ -27,26 +27,28 @@ class MatchController {
 			for await session in MatchActivity.sessions() {
 				reset()
 				self.session = session
+				session.join()
 
 				session.$state.sink { [weak self] state in
 					if case .invalidated = state {
 						self?.reset()
 					}
 				}.store(in: &bag)
-				session.join()
 
 				session.$activeParticipants
-					.receive(on: DispatchQueue.main)	// meh
+					.receive(on: DispatchQueue.main)
 					.sink { [weak self] participants in
 					self?.playerCount = participants.count
 				}.store(in: &bag)
 
+				// receive Game messages
 				let messenger = GroupSessionMessenger(session: session)
 				self.messenger = messenger
 				let task = detach { [weak self] in
 					guard let self = self else { return }
 
 					for await (game, _) in messenger.messages(of: Game.self) {
+						// check for newer game
 						guard self.game == nil || self.game!.created <= game.created else { return }
 
 						DispatchQueue.main.async {	// meh
@@ -71,6 +73,16 @@ class MatchController {
 		}
 	}
 
+	func start(_ word: String?) {
+		guard
+			let word = word,
+			!word.isEmpty,
+			playerCount > 0
+		else { return }
+		
+		next(Game(word))
+	}
+
 	func reset() {
 		DispatchQueue.main.async { [weak self] in	// meh
 			guard let self = self else { return }
@@ -85,6 +97,9 @@ class MatchController {
 			self.playerCount = 0
 		}
 	}
+}
+
+extension MatchController {
 
 	func next(_ game: Game) {
 		async {

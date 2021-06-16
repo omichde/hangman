@@ -102,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				DE93BEEF2675074400C160F5 /* hangman.entitlements */,
-				DE93BEE82674D86D00C160F5 /* Model */,
 				DE93BED02674CB4B00C160F5 /* AppDelegate.swift */,
 				DE93BED22674CB4B00C160F5 /* SceneDelegate.swift */,
+				DE93BEE82674D86D00C160F5 /* Model */,
 				DE93BEED2674DB4D00C160F5 /* MatchController.swift */,
 				DE9C35A1267652B4002466AE /* UI */,
 				DE93BED92674CB4D00C160F5 /* Assets.xcassets */,

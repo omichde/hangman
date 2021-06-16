@@ -44,17 +44,7 @@ class StartViewController: UIViewController {
 	}
 
 	@IBAction func start(_ sender: UIBarButtonItem) {
-		startGame()
-	}
-	
-	func startGame() {
-		guard
-			let word = wordView.text,
-			!word.isEmpty,
-			match.playerCount > 0
-		else { return }
-		
-		match.next(Game(word))
+		match.start(wordView.text)
 	}
 }
 
@@ -62,7 +52,7 @@ extension StartViewController: UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		defer {
-			startGame()
+			match.start(wordView.text)
 		}
 		return true
 	}
