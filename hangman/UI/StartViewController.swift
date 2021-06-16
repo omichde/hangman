@@ -14,19 +14,20 @@ class StartViewController: UIViewController {
 	@IBOutlet weak var counterView: UILabel!
 
 	private var bag = Set<AnyCancellable>()
+	private let match = MatchController.shared
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		// update counter of players
-		MatchController.shared.$playerCount
+		match.$playerCount
 			.sink { [weak self] pc in
 				self?.counterView.text = "\(pc) Players"
 			}
 			.store(in: &bag)
 
 		// move to matchViewController if game is available
-		MatchController.shared.$game
+		match.$game
 			.sink { [weak self] game in
 				guard nil != game, self?.navigationController?.topViewController == self
 				else { return }
@@ -39,13 +40,30 @@ class StartViewController: UIViewController {
 	@IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) { }
 
 	@IBAction func connect(_ sender: UIBarButtonItem) {
-		MatchController.shared.connect()
+		match.connect()
 	}
 
 	@IBAction func start(_ sender: UIBarButtonItem) {
-		guard let word = wordView.text, !word.isEmpty else { return }
+		startGame()
+	}
+	
+	func startGame() {
+		guard
+			let word = wordView.text,
+			!word.isEmpty,
+			match.playerCount > 0
+		else { return }
 		
-		MatchController.shared.next(Game(word))
+		match.next(Game(word))
 	}
 }
 
+extension StartViewController: UITextFieldDelegate {
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		defer {
+			startGame()
+		}
+		return true
+	}
+}

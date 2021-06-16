@@ -33,24 +33,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Guessword" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qB1-7v-L4o">
-                                <rect key="frame" x="16" y="120" width="382" height="34"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="done" textContentType="name"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPI-Ax-lQg">
-                                <rect key="frame" x="179.5" y="186" width="55.5" height="16"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <rect key="frame" x="16" y="88" width="73" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Guessword" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qB1-7v-L4o">
+                                <rect key="frame" x="16" y="152" width="382" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="done" textContentType="name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ju4-Dj-uvI" id="QJn-N1-xS0"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mnQ-vl-pVt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OPI-Ax-lQg" firstAttribute="top" secondItem="qB1-7v-L4o" secondAttribute="bottom" constant="32" id="POx-1f-ceq"/>
-                            <constraint firstItem="OPI-Ax-lQg" firstAttribute="centerX" secondItem="mnQ-vl-pVt" secondAttribute="centerX" id="hFC-iD-pff"/>
-                            <constraint firstItem="qB1-7v-L4o" firstAttribute="top" secondItem="mnQ-vl-pVt" secondAttribute="top" constant="32" id="r8B-sD-ZB8"/>
+                            <constraint firstItem="OPI-Ax-lQg" firstAttribute="top" secondItem="mnQ-vl-pVt" secondAttribute="top" id="W8D-0l-6Uw"/>
+                            <constraint firstItem="OPI-Ax-lQg" firstAttribute="leading" secondItem="mnQ-vl-pVt" secondAttribute="leading" constant="16" id="r5V-d2-NfK"/>
+                            <constraint firstItem="qB1-7v-L4o" firstAttribute="top" secondItem="mnQ-vl-pVt" secondAttribute="top" constant="64" id="r8B-sD-ZB8"/>
                             <constraint firstItem="qB1-7v-L4o" firstAttribute="leading" secondItem="mnQ-vl-pVt" secondAttribute="leading" constant="16" id="trT-eI-o3y"/>
                             <constraint firstItem="mnQ-vl-pVt" firstAttribute="trailing" secondItem="qB1-7v-L4o" secondAttribute="trailing" constant="16" id="ybo-cL-3AY"/>
                         </constraints>

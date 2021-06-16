@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE7609102679BD7B00B4B5BB /* Game+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76090F2679BD7B00B4B5BB /* Game+Logic.swift */; };
+		DE7609122679BDE700B4B5BB /* Game+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7609112679BDE700B4B5BB /* Game+Formatting.swift */; };
 		DE93BED12674CB4B00C160F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BED02674CB4B00C160F5 /* AppDelegate.swift */; };
 		DE93BED32674CB4B00C160F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BED22674CB4B00C160F5 /* SceneDelegate.swift */; };
 		DE93BED52674CB4B00C160F5 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BED42674CB4B00C160F5 /* StartViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE76090F2679BD7B00B4B5BB /* Game+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+Logic.swift"; sourceTree = "<group>"; };
+		DE7609112679BDE700B4B5BB /* Game+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+Formatting.swift"; sourceTree = "<group>"; };
 		DE93BECD2674CB4B00C160F5 /* hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE93BED02674CB4B00C160F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE93BED22674CB4B00C160F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				DE93BEE92674D88D00C160F5 /* Game.swift */,
+				DE76090F2679BD7B00B4B5BB /* Game+Logic.swift */,
+				DE7609112679BDE700B4B5BB /* Game+Formatting.swift */,
 				DE93BEEB2674DAED00C160F5 /* MatchActivity.swift */,
 			);
 			path = Model;
@@ -244,8 +250,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE93BEEC2674DAED00C160F5 /* MatchActivity.swift in Sources */,
+				DE7609102679BD7B00B4B5BB /* Game+Logic.swift in Sources */,
 				DE9C35A926765AAB002466AE /* ErrorViewController.swift in Sources */,
 				DE9C35A526765391002466AE /* HangmanView.swift in Sources */,
+				DE7609122679BDE700B4B5BB /* Game+Formatting.swift in Sources */,
 				DE9C35A3267652D8002466AE /* HangmanKit.swift in Sources */,
 				DE9C35A726765931002466AE /* SuccessViewController.swift in Sources */,
 				DE93BEEE2674DB4D00C160F5 /* MatchController.swift in Sources */,
