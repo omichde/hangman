@@ -22,13 +22,18 @@ class MatchViewController: UIViewController {
 		super.viewDidLoad()
 		
 		match.$game.sink { [weak self] game in
-			guard let self = self, let game = game else { return }
-
-			self.viewUpdate(game: game)
-			switch game.state {
-			case .success: self.performSegue(withIdentifier: "showSuccess", sender: nil)
-			case .failure: self.performSegue(withIdentifier: "showError", sender: nil)
-			default: ()
+			guard let self = self else { return }
+			
+			if let game = game {
+				self.viewUpdate(game: game)
+				switch game.state {
+				case .success: self.performSegue(withIdentifier: "showSuccess", sender: nil)
+				case .failure: self.performSegue(withIdentifier: "showError", sender: nil)
+				default: ()
+				}
+			}
+			else {
+				self.performSegue(withIdentifier: "unwindToStart", sender: nil)
 			}
 		}.store(in: &bag)
 

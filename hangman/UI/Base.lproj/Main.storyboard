@@ -147,7 +147,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="dgh-ne-SoJ">
                             <imageReference key="image" image="xmark" catalog="system"/>
                             <connections>
-                                <segue destination="hz1-NW-qbd" kind="unwind" unwindAction="unwindToStartWithUnwindSegue:" id="ah3-HK-5Fg"/>
+                                <segue destination="hz1-NW-qbd" kind="unwind" identifier="unwindToStart" unwindAction="unwindToStartWithUnwindSegue:" id="ah3-HK-5Fg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -6,16 +6,27 @@
 //
 
 import UIKit
+import Combine
 
 
 class GuessViewController: UIViewController {
 	
 	@IBOutlet weak var wordView: UITextField!
+
+	private var bag = Set<AnyCancellable>()
 	private let match = MatchController.shared
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
+	
+		match.$game.sink { [weak self] game in
+			guard let self = self else { return }
+			
+			if game == nil {
+				self.performSegue(withIdentifier: "unwindToStart", sender: nil)
+			}
+		}.store(in: &bag)
+
 		wordView.becomeFirstResponder()
 	}
 }
