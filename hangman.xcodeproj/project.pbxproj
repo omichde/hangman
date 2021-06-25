@@ -431,6 +431,9 @@
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hangman/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = hangman;
+				INFOPLIST_KEY_CFBundleName = hangman;
+				INFOPLIST_KEY_CFBundleVersion = 2;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -460,6 +463,9 @@
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hangman/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = hangman;
+				INFOPLIST_KEY_CFBundleName = hangman;
+				INFOPLIST_KEY_CFBundleVersion = 2;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

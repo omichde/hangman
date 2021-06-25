@@ -11,7 +11,7 @@ import Foundation
 extension Game {
 
 	func guess(_ guess: String) -> Game {
-		let text = guess.uppercased()
+		let text = guess.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 		guard !text.isEmpty else { return self }
 
 		// if single char append to guess
@@ -32,10 +32,7 @@ extension Game {
 			}
 			
 			// found it
-			var guesses = guesses
-			guesses.append(contentsOf: Array(text).map { String($0) })
-			guesses = Array(Set(guesses))
-			return self.with(guesses: guesses)
+			return self.with(guesses: Array(text).map { String($0) })
 		}
 	}
 	

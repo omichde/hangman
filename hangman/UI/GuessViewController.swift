@@ -37,7 +37,9 @@ extension GuessViewController: UITextFieldDelegate {
 		guard let guess = textField.text, !guess.isEmpty else { return false }
 		
 		defer {
-			match.guess(guess)
+			async {
+				await match.guess(guess)
+			}
 			dismiss(animated: true, completion: nil)
 		}
 		return true

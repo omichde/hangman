@@ -52,7 +52,9 @@ extension StartViewController: UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		defer {
-			match.start(wordView.text)
+			async {
+				await match.start(wordView.text)
+			}
 		}
 		return true
 	}

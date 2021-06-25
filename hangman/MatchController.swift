@@ -9,8 +9,8 @@ import Foundation
 import GroupActivities
 import Combine
 
-
-class MatchController {
+@MainActor
+class MatchController: ObservableObject {
 	
 	static var shared = MatchController()
 
@@ -29,17 +29,19 @@ class MatchController {
 				self.session = session
 				session.join()
 
-				session.$state.sink { [weak self] state in
-					if case .invalidated = state {
-						self?.reset()
-					}
-				}.store(in: &bag)
+				session.$state
+					.receive(on: DispatchQueue.main)
+					.sink { [weak self] state in
+						if case .invalidated = state {
+							self?.reset()
+						}
+					}.store(in: &bag)
 
 				session.$activeParticipants
 					.receive(on: DispatchQueue.main)
 					.sink { [weak self] participants in
-					self?.playerCount = participants.count
-				}.store(in: &bag)
+						self?.playerCount = participants.count
+					}.store(in: &bag)
 
 				// receive Game messages
 				let messenger = GroupSessionMessenger(session: session)
@@ -47,18 +49,21 @@ class MatchController {
 				let task = detach { [weak self] in
 					guard let self = self else { return }
 
-					for await (game, _) in messenger.messages(of: Game.self) {
-						// check for newer game
-						guard self.game == nil || self.game!.created <= game.created else { return }
-
-						DispatchQueue.main.async {	// meh
-							self.game = game
-						}
+					for await (nextGame, _) in messenger.messages(of: Game.self) {
+						await self.consume(nextGame)
 					}
 				}
 				tasks.insert(task)
 			}
 		}
+	}
+
+	private func consume(_ nextGame: Game) {
+		// check for newer game
+		if let game = self.game, game.created > nextGame.created {
+			return
+		}
+		self.game = nextGame
 	}
 
 	func connect() {
@@ -77,25 +82,21 @@ class MatchController {
 		guard
 			let word = word,
 			!word.isEmpty,
-			playerCount > 0
+			playerCount > 1
 		else { return }
 		
 		next(Game(word))
 	}
 
 	func reset() {
-		DispatchQueue.main.async { [weak self] in	// meh
-			guard let self = self else { return }
-
-			self.bag.removeAll()
-			self.tasks.forEach { $0.cancel() }
-			self.tasks = []
-//			self.session?.leave() // needs testing
-//			self.session = nil
-			self.messenger = nil
-			self.game = nil
-			self.playerCount = 0
-		}
+		self.bag.removeAll()
+		self.tasks.forEach { $0.cancel() }
+		self.tasks = []
+		//			self.session?.leave() // needs testing
+		self.session = nil
+		self.messenger = nil
+		self.game = nil
+		self.playerCount = 0
 	}
 }
 
@@ -104,9 +105,7 @@ extension MatchController {
 	func next(_ game: Game) {
 		async {
 			do {
-				DispatchQueue.main.async { [weak self] in	// meh
-					self?.game = game
-				}
+				self.game = game
 				try await messenger?.send(game)
 			}
 			catch {
