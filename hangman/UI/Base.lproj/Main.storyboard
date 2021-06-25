@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1860.8695652173915" y="97.767857142857139"/>
         </scene>
-        <!--Success View Controller-->
+        <!--End View Controller-->
         <scene sceneID="Dnm-g6-puw">
             <objects>
-                <viewController id="ayr-rC-NtW" customClass="SuccessViewController" customModule="hangman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ayr-rC-NtW" customClass="EndViewController" customModule="hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdg-d7-bkH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,20 +193,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-xL-uSa">
-                                <rect key="frame" x="107" y="363" width="200" height="199.5"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <rect key="frame" x="103.5" y="363" width="207" height="206.5"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0sA-lp-ceV"/>
                                     <constraint firstAttribute="width" secondItem="UCB-xL-uSa" secondAttribute="height" id="Hp1-VX-7g8"/>
                                 </constraints>
                                 <imageReference key="image" image="gift" catalog="system"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lv9-2A-XhD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="MFC-4M-Iyy" firstAttribute="leading" secondItem="Lv9-2A-XhD" secondAttribute="leading" constant="16" id="2oT-0B-YTi"/>
                             <constraint firstItem="h8p-bj-iZY" firstAttribute="top" secondItem="Lv9-2A-XhD" secondAttribute="top" id="6iY-rv-kvq"/>
+                            <constraint firstItem="UCB-xL-uSa" firstAttribute="width" secondItem="zdg-d7-bkH" secondAttribute="width" multiplier="0.5" id="AD9-Ps-u2U"/>
                             <constraint firstItem="h8p-bj-iZY" firstAttribute="leading" secondItem="Lv9-2A-XhD" secondAttribute="leading" id="Ifr-wX-DK3"/>
                             <constraint firstItem="UCB-xL-uSa" firstAttribute="centerX" secondItem="Lv9-2A-XhD" secondAttribute="centerX" id="WLL-6D-SKa"/>
                             <constraint firstItem="UCB-xL-uSa" firstAttribute="top" secondItem="MFC-4M-Iyy" secondAttribute="bottom" constant="64" id="X00-D6-eje"/>
@@ -225,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="1410.144927536232" y="853.79464285714278"/>
         </scene>
-        <!--Error View Controller-->
+        <!--End View Controller-->
         <scene sceneID="6wS-Xu-0IP">
             <objects>
-                <viewController id="Z9q-eT-uYX" customClass="ErrorViewController" customModule="hangman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Z9q-eT-uYX" customClass="EndViewController" customModule="hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BOe-VP-IWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,21 +248,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9K-qh-s4A">
-                                <rect key="frame" x="107" y="364" width="200" height="197.5"/>
-                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <rect key="frame" x="103.5" y="364" width="207" height="204.5"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="kcJ-x5-71y"/>
                                     <constraint firstAttribute="width" secondItem="C9K-qh-s4A" secondAttribute="height" id="pLj-bk-R7r"/>
                                 </constraints>
                                 <imageReference key="image" image="xmark.bin" catalog="system"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1GH-Wx-0UJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstItem="X7b-yi-3o8" firstAttribute="leading" secondItem="1GH-Wx-0UJ" secondAttribute="leading" constant="16" id="76m-i5-cVj"/>
                             <constraint firstItem="1GH-Wx-0UJ" firstAttribute="trailing" secondItem="X7b-yi-3o8" secondAttribute="trailing" constant="16" id="7Ty-4D-SNc"/>
                             <constraint firstItem="1GH-Wx-0UJ" firstAttribute="bottom" secondItem="C8H-UU-Zdo" secondAttribute="bottom" id="KkT-5j-y8a"/>
+                            <constraint firstItem="C9K-qh-s4A" firstAttribute="width" secondItem="BOe-VP-IWy" secondAttribute="width" multiplier="0.5" id="RaD-y5-Iay"/>
                             <constraint firstItem="C8H-UU-Zdo" firstAttribute="leading" secondItem="1GH-Wx-0UJ" secondAttribute="leading" id="as1-yT-Dr6"/>
                             <constraint firstItem="C9K-qh-s4A" firstAttribute="centerX" secondItem="1GH-Wx-0UJ" secondAttribute="centerX" id="bXt-jc-KNp"/>
                             <constraint firstItem="1GH-Wx-0UJ" firstAttribute="trailing" secondItem="C8H-UU-Zdo" secondAttribute="trailing" id="cvg-lA-VHy"/>
@@ -334,6 +334,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE420DB926860B1800B004C0 /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = DE420DB826860B1800B004C0 /* success.wav */; };
+		DE420DBB26860B3A00B004C0 /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = DE420DBA26860B3A00B004C0 /* error.wav */; };
 		DE7609102679BD7B00B4B5BB /* Game+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76090F2679BD7B00B4B5BB /* Game+Logic.swift */; };
 		DE7609122679BDE700B4B5BB /* Game+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7609112679BDE700B4B5BB /* Game+Formatting.swift */; };
 		DE93BED12674CB4B00C160F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93BED02674CB4B00C160F5 /* AppDelegate.swift */; };
@@ -23,8 +25,7 @@
 		DE9C359B26761998002466AE /* hangmanGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C359A26761998002466AE /* hangmanGameTests.swift */; };
 		DE9C35A3267652D8002466AE /* HangmanKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A2267652D8002466AE /* HangmanKit.swift */; };
 		DE9C35A526765391002466AE /* HangmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A426765391002466AE /* HangmanView.swift */; };
-		DE9C35A726765931002466AE /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A626765931002466AE /* SuccessViewController.swift */; };
-		DE9C35A926765AAB002466AE /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A826765AAB002466AE /* ErrorViewController.swift */; };
+		DE9C35A726765931002466AE /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C35A626765931002466AE /* EndViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE420DB826860B1800B004C0 /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
+		DE420DBA26860B3A00B004C0 /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
 		DE76090F2679BD7B00B4B5BB /* Game+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+Logic.swift"; sourceTree = "<group>"; };
 		DE7609112679BDE700B4B5BB /* Game+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+Formatting.swift"; sourceTree = "<group>"; };
 		DE93BECD2674CB4B00C160F5 /* hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,8 +61,7 @@
 		DE9C359A26761998002466AE /* hangmanGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hangmanGameTests.swift; sourceTree = "<group>"; };
 		DE9C35A2267652D8002466AE /* HangmanKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmanKit.swift; sourceTree = "<group>"; };
 		DE9C35A426765391002466AE /* HangmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanView.swift; sourceTree = "<group>"; };
-		DE9C35A626765931002466AE /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
-		DE9C35A826765AAB002466AE /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		DE9C35A626765931002466AE /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE420DBC26860B4500B004C0 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				DE420DB826860B1800B004C0 /* success.wav */,
+				DE420DBA26860B3A00B004C0 /* error.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		DE93BEC42674CB4B00C160F5 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +119,7 @@
 				DE93BEED2674DB4D00C160F5 /* MatchController.swift */,
 				DE9C35A1267652B4002466AE /* UI */,
 				DE93BED92674CB4D00C160F5 /* Assets.xcassets */,
+				DE420DBC26860B4500B004C0 /* Sound */,
 				DE93BEDB2674CB4D00C160F5 /* LaunchScreen.storyboard */,
 				DE93BEDE2674CB4D00C160F5 /* Info.plist */,
 			);
@@ -140,8 +152,7 @@
 				DE93BED42674CB4B00C160F5 /* StartViewController.swift */,
 				DE93BEE42674D7BD00C160F5 /* MatchViewController.swift */,
 				DE93BEE62674D7D800C160F5 /* GuessViewController.swift */,
-				DE9C35A626765931002466AE /* SuccessViewController.swift */,
-				DE9C35A826765AAB002466AE /* ErrorViewController.swift */,
+				DE9C35A626765931002466AE /* EndViewController.swift */,
 				DE9C35A426765391002466AE /* HangmanView.swift */,
 				DE9C35A2267652D8002466AE /* HangmanKit.swift */,
 			);
@@ -229,8 +240,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE420DBB26860B3A00B004C0 /* error.wav in Resources */,
 				DE93BEDD2674CB4D00C160F5 /* LaunchScreen.storyboard in Resources */,
 				DE93BEDA2674CB4D00C160F5 /* Assets.xcassets in Resources */,
+				DE420DB926860B1800B004C0 /* success.wav in Resources */,
 				DE93BED82674CB4B00C160F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,11 +264,10 @@
 			files = (
 				DE93BEEC2674DAED00C160F5 /* MatchActivity.swift in Sources */,
 				DE7609102679BD7B00B4B5BB /* Game+Logic.swift in Sources */,
-				DE9C35A926765AAB002466AE /* ErrorViewController.swift in Sources */,
 				DE9C35A526765391002466AE /* HangmanView.swift in Sources */,
 				DE7609122679BDE700B4B5BB /* Game+Formatting.swift in Sources */,
 				DE9C35A3267652D8002466AE /* HangmanKit.swift in Sources */,
-				DE9C35A726765931002466AE /* SuccessViewController.swift in Sources */,
+				DE9C35A726765931002466AE /* EndViewController.swift in Sources */,
 				DE93BEEE2674DB4D00C160F5 /* MatchController.swift in Sources */,
 				DE93BEE52674D7BD00C160F5 /* MatchViewController.swift in Sources */,
 				DE93BEEA2674D88D00C160F5 /* Game.swift in Sources */,
