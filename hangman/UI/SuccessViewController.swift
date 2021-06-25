@@ -18,4 +18,10 @@ class SuccessViewController: UIViewController {
 		
 		wordView.text = match.game?.word
 	}
+
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+
+		match.end()
+	}
 }

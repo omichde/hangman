@@ -98,6 +98,15 @@ class MatchController: ObservableObject {
 		self.game = nil
 		self.playerCount = 0
 	}
+	
+	func end() {
+		self.game = nil
+	}
+	
+	func update() {
+		guard let game = game else { return }
+		next(game.updated())
+	}
 }
 
 extension MatchController {

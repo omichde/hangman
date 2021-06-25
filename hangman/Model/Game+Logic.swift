@@ -35,7 +35,11 @@ extension Game {
 			return self.with(guesses: Array(text).map { String($0) })
 		}
 	}
-	
+
+	func updated() -> Game {
+		Game(created: Date(), word: word, guesses: guesses, stepCounter: stepCounter, falseCounter: falseCounter)
+	}
+
 	private func with(guesses: [String]) -> Game {
 		Game(created: Date(), word: word, guesses: guesses, stepCounter: stepCounter, falseCounter: falseCounter)
 	}

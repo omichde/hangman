@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nqy-3X-2Kj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nqy-3X-2Kj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -98,14 +98,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKT-Rk-fmL">
-                                <rect key="frame" x="177.5" y="730.5" width="59" height="59"/>
+                                <rect key="frame" x="157" y="710" width="100.5" height="100.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                                     <imageReference key="image" image="wand.and.stars" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font" scale="default">
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                     </preferredSymbolConfiguration>
-                                    <directionalEdgeInsets key="contentInsets" top="16" leading="16" bottom="16" trailing="16"/>
+                                    <directionalEdgeInsets key="contentInsets" top="24" leading="24" bottom="24" trailing="24"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="0Ws-5p-EFc" kind="presentation" id="rYD-Df-pxY"/>
@@ -148,6 +148,12 @@
                             <imageReference key="image" image="xmark" catalog="system"/>
                             <connections>
                                 <segue destination="hz1-NW-qbd" kind="unwind" identifier="unwindToStart" unwindAction="unwindToStartWithUnwindSegue:" id="ah3-HK-5Fg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="1JO-r5-kbg">
+                            <imageReference key="image" image="arrow.2.circlepath" catalog="system"/>
+                            <connections>
+                                <action selector="update:" destination="9Z3-te-eOm" id="h5y-eh-zyB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -310,6 +316,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
         <image name="gift" catalog="system" width="128" height="124"/>
         <image name="link" catalog="system" width="128" height="122"/>

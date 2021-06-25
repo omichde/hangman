@@ -47,4 +47,8 @@ class MatchViewController: UIViewController {
 		guessView.text = game.displayGuesses
 		hangmanView.steps = game.falseCounter
 	}
+	
+	@IBAction func update(_ sender: UIBarButtonItem) {
+		match.update()
+	}
 }
